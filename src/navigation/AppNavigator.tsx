@@ -2,7 +2,7 @@ import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 
-import { MainScreen } from '../pages/MainScreen'
+import { MainStack } from './MainStack'
 import { AddScreen } from '../pages/AddScreen'
 import { FindScreen } from '../pages/FindScreen'
 
@@ -13,7 +13,7 @@ export default function AppNavigator(){
         <NavigationContainer>
             <Tab.Navigator>
                 <Tab.Screen 
-                    component={MainScreen}
+                    component={MainStack}
                     name='Main'
                     options={{
                         title: 'Главная'

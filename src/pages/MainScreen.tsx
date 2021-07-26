@@ -1,10 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Button } from 'react-native'
 
-export const MainScreen: React.FC = () => {
+interface MainScreenProps{
+    navigation: any
+}
+
+export const MainScreen: React.FC<MainScreenProps> = ({navigation}) => {
     return(
         <View style={styles.container}>
             <Text>MainScreen</Text>
+            <Button title='Нажми' onPress={() => navigation.navigate('Recipe')} />
         </View>
     )
 }
