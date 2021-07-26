@@ -1,5 +1,8 @@
 import React from 'react'
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { View, StyleSheet, FlatList} from 'react-native'
+import { Item } from 'react-native-paper/lib/typescript/components/List/List'
+import { Recipe } from '../components/Recipe'
+import { DATA } from '../data'
 
 interface MainScreenProps{
     navigation: any
@@ -7,9 +10,12 @@ interface MainScreenProps{
 
 export const MainScreen: React.FC<MainScreenProps> = ({navigation}) => {
     return(
-        <View style={styles.container}>
-            <Text>MainScreen</Text>
-            <Button title='Нажми' onPress={() => navigation.navigate('Recipe')} />
+        <View>
+            <FlatList 
+                data={DATA}
+                keyExtractor={item=> item.id.toString()}
+                renderItem={({item}) => <Recipe />}
+            />
         </View>
     )
 }
