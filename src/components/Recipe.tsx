@@ -1,7 +1,22 @@
 import React from 'react'
 import { TouchableNativeFeedback, View, ImageBackground, Text, StyleSheet } from 'react-native'
 
-export const Recipe: React.FC = () => {
+interface RecipeItem{
+    id: number,
+    name: string,
+    imageURL: string,
+    ingredients: string,
+    description: string,
+    category: number
+}
+
+interface RecipeProps{
+    onOpen: any,
+    onDelete: any,
+    recipe: RecipeItem
+}
+
+export const Recipe: React.FC<RecipeProps> = ({recipe, onOpen, onDelete}) => {
     return(
         <TouchableNativeFeedback>
             <View style={styles.recipe}>
